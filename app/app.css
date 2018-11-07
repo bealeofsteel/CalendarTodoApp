@@ -1,0 +1,144 @@
+/* app css stylesheet */
+
+/* calendar component */
+
+.date-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.date {
+    height: 175px;
+    width: 175px;
+    background-color: rgb(244, 243, 248);
+    margin: 5px;
+    overflow-y: scroll;
+    border: 1px solid rgb(233, 233, 240);
+    font-size: 13px;
+}
+
+.header {
+    height: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.calendar-title {
+    position: absolute;
+    left: 50px;
+}
+
+.date-controls-container {
+    position: absolute;
+    right: 50px;
+}
+
+.date-control {
+    padding-left: 10px;
+}
+
+.blue-clickable {
+    cursor: pointer;
+    color: rgb(78, 170, 243);
+}
+
+.blue-clickable:hover {
+    color: rgba(78, 170, 243, 0.7);
+}
+
+/* date component */
+
+.display-date {
+    padding: 10px;
+}
+
+.add-task-container {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.task {
+    border: 1px solid rgb(233, 233, 240);
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.task-content {
+    position: relative;
+    margin-left: 5px;
+    display: inline-block;
+    max-width: 100px;
+    word-wrap: break-word;
+}
+
+.task-content.complete {
+    font-style: italic;
+    color: rgb(147, 141, 156);
+}
+
+.task-control {
+    float: right;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.square-container {
+    position: relative;
+    float: left;
+    padding: 2px;
+}
+
+.square {
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgb(233, 233, 240);
+    background-color: rgb(244, 243, 248);
+    margin-top: 4px;
+}
+
+.square.complete {
+    background-color: rgb(34, 208, 189);
+    border: 1px solid rgb(34, 208, 189);
+}
+
+/* hide bootstrap's default carat for dropdowns */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* overlay */
+
+.task-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-form {
+    height: 400px;
+    width: 400px;
+    background: white;
+    border: 3px solid rgb(233, 233, 240);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.task-input {
+    border: 2px solid rgb(233, 233, 240);
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 40px;
+    margin-top: 5px;
+}

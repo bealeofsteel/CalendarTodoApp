@@ -1,0 +1,18 @@
+<div>
+
+    <div class="header">
+        <span class="calendar-title">Dates</span>
+
+        <span class="date-controls-container">
+            <span class="date-control blue-clickable" ng-click="calendar.getPreviousDates()">&lt; Previous</span>
+
+            <span class="date-control blue-clickable" ng-click="calendar.getNextDates()">Next &gt;</span>
+        </span>
+    </div>
+
+    <div class="date-container">
+        <date ng-repeat="date in calendar.dates" timestamp="date" class="date"></date>
+    </div>
+
+    <task-overlay></task-overlay>
+</div>

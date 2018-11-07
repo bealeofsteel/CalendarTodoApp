@@ -1,0 +1,30 @@
+<div ng-show="OverlayService.showOverlay" class="task-overlay">
+
+    <div class="task-form">
+        <div>
+            <div>Title</div>
+            <div>
+                <input class="task-input" type="text" ng-model="OverlayService.task.title">
+            </div>
+        </div>
+        
+        <div>
+            <div>Day</div>
+            <div>
+                <input class="task-input" type="date" ng-model="OverlayService.task.date"/>
+            </div>
+        </div>
+
+        <div>
+            <div>Hour</div>
+            <div>
+                <select class="task-input" ng-options="hourOption | hourFormat for hourOption in OverlayService.hourOptions" ng-model="OverlayService.task.hour"></select>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary" ng-click="saveTask()">Save</button>
+            <button class="btn" ng-click="OverlayService.showOverlay = false">Cancel</button>
+        </div>
+    </div>
+</div>

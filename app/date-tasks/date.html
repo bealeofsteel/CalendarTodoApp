@@ -1,0 +1,28 @@
+<div class="date">
+    <div class="display-date">{{displayDate}}</div>
+
+    <div ng-repeat="task in DateTasksService.getTasksForDate(timestamp)| orderBy: 'hour'" class="task">
+        <div class="square-container">
+            <div class="square" ng-class="task.complete ? 'complete' : ''"></div>
+        </div>
+        <div class="task-content" ng-class="task.complete ? 'complete' : ''">
+            <div>{{task.title}}</div>
+            <div>{{task.hour | hourFormat}}</div>
+        </div>
+        
+        <div ng-hide="task.complete" class="options-menu dropdown task-control blue-clickable">
+            <span class="dropdown-toggle" data-toggle="dropdown" >&#8942;</span>
+            <div class="dropdown-menu">
+                <div class="dropdown-item" ng-click="OverlayService.showEditTaskOverlay(task)">Edit</div>
+                <div class="dropdown-item" ng-click="setTaskComplete(task, true)">Complete</div>
+                <div class="dropdown-item" ng-click="DateTasksService.deleteTask(task, timestamp)">Delete</div>
+            </div>
+        </div>
+        
+        <div ng-show="task.complete" class="undo-complete task-control blue-clickable" ng-click="setTaskComplete(task, false)">&#8635;</div>
+    </div>
+
+    <div class="add-task-container">
+        <span class="blue-clickable" ng-click="OverlayService.showCreateTaskOverlay(timestamp)">New Task</span>
+    </div>
+</div>
