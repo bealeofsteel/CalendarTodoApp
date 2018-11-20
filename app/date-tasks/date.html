@@ -1,7 +1,7 @@
 <div class="date">
     <div class="display-date">{{displayDate}}</div>
 
-    <div ng-repeat="task in DateTasksService.getTasksForDate(timestamp)| orderBy: 'hour'" class="task">
+    <div ng-repeat="task in DateTasksService.getTasksForDate(timestamp) | orderBy: 'hour'" class="task">
         <div class="square-container">
             <div class="square" ng-class="task.complete ? 'complete' : ''"></div>
         </div>
@@ -13,7 +13,7 @@
         <div ng-hide="task.complete" class="options-menu dropdown task-control blue-clickable">
             <span class="dropdown-toggle" data-toggle="dropdown" >&#8942;</span>
             <div class="dropdown-menu">
-                <div class="dropdown-item" ng-click="OverlayService.showEditTaskOverlay(task)">Edit</div>
+                <div class="dropdown-item" ng-click="OverlayService.showEditTaskOverlay(task, timestamp)">Edit</div>
                 <div class="dropdown-item" ng-click="setTaskComplete(task, true)">Complete</div>
                 <div class="dropdown-item" ng-click="DateTasksService.deleteTask(task, timestamp)">Delete</div>
             </div>

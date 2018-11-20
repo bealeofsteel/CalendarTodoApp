@@ -12,9 +12,9 @@ angular.module('calendarTodoApp')
 
             service.showOverlay = false;
 
-            service.hourOptions = [];
-
             service.mode = undefined;
+
+            service.hourOptions = [];
 
             for (var i = 0; i < 24; i++) {
                 service.hourOptions.push(i);
@@ -44,10 +44,11 @@ angular.module('calendarTodoApp')
                 service.showOverlay = true;
             };
 
-            service.showEditTaskOverlay = function (task) {
+            service.showEditTaskOverlay = function (task, timestamp) {
+                task.date = timestamp.toDate();
                 service.task = angular.copy(task);
-                service.setEditMode();
                 service.originalTask = task;
+                service.setEditMode();
                 service.showOverlay = true;
             };
 
